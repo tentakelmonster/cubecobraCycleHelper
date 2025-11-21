@@ -4,9 +4,8 @@ from pathlib import Path
 JSON_PATH = Path.cwd() / "resources" / "cycles.json"
 
 class CycleData(object):
-
+    """ Reads the cycle data from the JSON """
     def __init__(self):
-        """ """
         self.cycleData = self.getCycleDataFromJson()
 
     @staticmethod

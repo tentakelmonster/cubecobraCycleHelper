@@ -14,5 +14,3 @@ cycles = cycle_helper.CycleData()
 app = wx.App(False)
 mainframe = gui.CycleHelperGui(None, "Cycle Import Helper", cycles.getCycleData())
 app.MainLoop()
-
-

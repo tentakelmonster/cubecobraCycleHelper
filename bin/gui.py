@@ -1,8 +1,17 @@
 import wx
 
 class CycleHelperGui(wx.Frame):
-    
-    def __init__(self, parent, title, cycleData):
+    """
+        This is where the GUI is built upon the app instance from the main.py
+
+        Args:
+            parent (object):                    mostly None
+            title (str):                        what the thing is called
+            cycleData (dict[str; list[str]])    has each cycle's names as keys and the cards in a list as value
+    """
+
+    def __init__(self, parent, strtitle, cycleData):
+        # init things
         wx.Frame.__init__(self, parent, title=title, size=(1300,700))
         self.mainSizer = wx.BoxSizer(wx.HORIZONTAL)
         self.cycleData = cycleData
@@ -38,10 +47,12 @@ class CycleHelperGui(wx.Frame):
         self.Show()
 
     def OnClear(self, event):
+        """ Resets checkboxes """
         for i in range(len(self.cycleData.keys())):
             self.cyclesCheckBoxes.Check(i, False)
 
     def OnGenerate(self, event):
+        """ Dumps the cards for each checked cycle in the txt """
         checkedCycles = self.cyclesCheckBoxes.GetCheckedStrings()
         with open("export.txt", "w") as file:
             for cycleName in checkedCycles:
