@@ -10,7 +10,7 @@ class CycleHelperGui(wx.Frame):
             cycleData (dict[str; list[str]])    has each cycle's names as keys and the cards in a list as value
     """
 
-    def __init__(self, parent, strtitle, cycleData):
+    def __init__(self, parent, title, cycleData):
         # init things
         wx.Frame.__init__(self, parent, title=title, size=(1300,700))
         self.mainSizer = wx.BoxSizer(wx.HORIZONTAL)
